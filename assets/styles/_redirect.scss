@@ -1,0 +1,10 @@
+.fading {
+	opacity: 1;
+	transition: opacity .5s linear;
+	&.fade-away {
+		opacity: 0;
+	}
+	&.fade-in {
+		opacity: 1;
+	}
+}

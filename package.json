@@ -1,0 +1,50 @@
+{
+  "name": "batman_vs_superman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "autoprefixer": "^6.3.4",
+    "babelify": "^7.2.0",
+    "browser-sync": "^2.11.2",
+    "browserify": "^6.3.2",
+    "hashmark": "^2.0.0",
+    "http-server": "^0.7.3",
+    "jade": "^1.7.0",
+    "jshint": "^2.5.10",
+    "karma": "^0.12.28",
+    "karma-browserify": "^1.0.0",
+    "karma-cli": "^0.0.4",
+    "karma-mocha": "^0.1.10",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "live-reload": "^0.2.0",
+    "minifyify": "^6.0.0",
+    "mocha": "^2.0.1",
+    "node-sass": "^3.4.2",
+    "nodemon": "^1.2.1",
+    "opener": "^1.4.0",
+    "parallelshell": "^1.0.0",
+    "postcss-cli": "^2.5.1",
+    "rimraf": "^2.2.8",
+    "s3-cli": "^0.11.1"
+  },
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "prebuild": "npm run clean -s",
+    "build": "npm run build:devscripts -s && npm run build:styles -s && npm run build:cp -s",
+    "dev:bs": "browser-sync start --browser='google chrome canary' --files='build/**/*.css, *.html, build/**/*.js' --index='index.html' --server 'assets'",
+    "dev:mon": "nodemon --watch assets/scripts --watch assets/styles --ext js,scss --exec 'npm run dev:build && npm run dev:reload'",
+    "dev:css": "node-sass --include-path assets/styles < assets/styles/index.scss | postcss --use autoprefixer --autoprefixer.browsers '> 1%' -m > assets/build/styles/index-dev.css",
+    "dev:js": "browserify -d assets/scripts/index.js -t babelify -o assets/build/scripts/index-dev.js",
+    "dev:build": "npm run dev:css & npm run dev:js",
+    "dev:bsmon": "npm run dev:bs & npm run dev:mon",
+    "dev:reload": "browser-sync reload ",
+    "dev:s": "npm run dev:build && npm run dev:bsmon"
+  },
+  "author": "wwwaap <wwwaap@gmail.com> (https://www.everthis.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "babel-preset-es2015": "^6.6.0",
+    "normalize.css": "^4.0.0"
+  }
+}
