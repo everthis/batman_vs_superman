@@ -1,7 +1,7 @@
 export function textModel() {
 	let str = `
 <div class="text-model">
-		<p>
+		<p class="text">
 			loremloremloremloremloremlorem
 		</p>
 </div>

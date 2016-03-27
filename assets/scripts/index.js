@@ -17,7 +17,7 @@ function loadLogo() {
 	circle.innerHTML = vsCircle;
 	logo.getElementsByClassName('superman')[0].addEventListener('animationend', logoAnimaEnd);
 	_container.appendChild(logo);
-	_container.appendChild(circle);
+	// _container.appendChild(circle);
 }
 
 function logoAnimaEnd() {
@@ -34,8 +34,11 @@ function showCurtain() {
 		document.getElementById('curtain').classList.add('opening');
 		setTimeout(function () {
 			 curtainDom.appendChild(strToDom(textModel())); 
-		}, 2500)
-	}, 0)
+			 setTimeout(function () {
+				 curtainDom.getElementsByClassName('text')[0].classList.add('opening');
+			 }, 100);
+		}, 2400);
+	}, 0);
 }
 
 _container.addEventListener('transitionend', fade);

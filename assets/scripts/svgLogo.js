@@ -10,7 +10,7 @@ export let svgLogo = `
     <filter id="superman-inner-shadow">
       <feOffset dx="0" dy="0" />
       <feGaussianBlur
-        stdDeviation="8"
+        stdDeviation="1"
         result="offset-blur"
       />
       <feComposite
