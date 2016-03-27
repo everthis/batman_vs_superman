@@ -1,5 +1,7 @@
 import {strToDom} from './stringToDom';
+import {textModel} from './textModel';
 export function curtain() {
+	let alreadyTriggered = false;
 	let curtainStr = `
 <div id="curtain">
 	<div class="img-bg"></div>
@@ -9,7 +11,11 @@ export function curtain() {
 `;
 	let curtainDom = strToDom(curtainStr);
 	curtainDom.getElementsByClassName('half-curtain')[0].addEventListener('transitionend', function() {
-		console.log('end');
+		console.log('ooo');
+		if (!alreadyTriggered) {
+			alreadyTriggered = true;
+			// curtainDom.appendChild(strToDom(textModel()));
+		}
 	});
 	return curtainDom;
 }

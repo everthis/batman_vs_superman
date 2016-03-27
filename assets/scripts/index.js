@@ -3,6 +3,8 @@ import {vsCircle} from './vsCircle';
 import {curtain} from './curtain';
 import {preloadImg} from './preloadImg';
 import {removeAllChildrenEle} from './removeAllChildrenEle';
+import {textModel} from './textModel';
+import {strToDom} from './stringToDom';
 
 let _container = document.getElementById('viewport');
 let imgs = [];
@@ -30,6 +32,9 @@ function showCurtain() {
 	_container.appendChild(curtainDom);
 	setTimeout(function() {
 		document.getElementById('curtain').classList.add('opening');
+		setTimeout(function () {
+			 curtainDom.appendChild(strToDom(textModel())); 
+		}, 2500)
 	}, 0)
 }
 
