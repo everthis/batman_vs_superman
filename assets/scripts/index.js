@@ -27,7 +27,7 @@ function logoAnimaEnd() {
 
 function showCurtain() {
 	let curtainDom = curtain();
-	curtainDom.getElementsByClassName('img-bg')[0].appendChild(imgs[1]);
+	curtainDom.getElementsByClassName('img-bg')[0].appendChild(imgs[0]);
 	removeAllChildrenEle(_container);
 	_container.appendChild(curtainDom);
 	setTimeout(function() {
@@ -64,10 +64,7 @@ function removeLoader() {
 
 
 imgs = preloadImg(allLoadCB,
-	'images/bvs_batfight.jpg',
-	'images/bvs_faceoff.jpg',
-	'images/bvs_superfight.jpg',
-	'images/bvs_ww.jpg'
+	'images/bvs_faceoff.jpg'
 );
  function allLoadCB() {
  	console.log('all done.');
