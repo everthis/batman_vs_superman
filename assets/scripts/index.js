@@ -43,7 +43,7 @@ function showCurtain() {
 			 
 		}, 2500);
 		 setTimeout(function () {
-			 document.getElementsByClassName('text')[0].classList.add('opening');
+			 (document.getElementsByClassName('text-model')[0]).getElementsByClassName('text')[0].classList.add('opening');
 		 }, 2600);
 	}, 0);
 }
