@@ -33,7 +33,9 @@ function showCurtain() {
 	setTimeout(function() {
 		document.getElementById('curtain').classList.add('opening');
 		setTimeout(function () {
-			 curtainDom.appendChild(strToDom(textModel())); 
+			var ele = document.createElement('div');
+			ele.classList.add('text-model');
+			 curtainDom.appendChild(ele); 
 			 
 		}, 2400);
 		setTimeout(function() {
