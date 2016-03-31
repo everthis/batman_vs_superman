@@ -34,13 +34,15 @@ function showCurtain() {
 		document.getElementById('curtain').classList.add('opening');
 		setTimeout(function () {
 			 curtainDom.appendChild(strToDom(textModel())); 
-			 setTimeout(function() {
-				 curtainDom.getElementsByClassName('text')[0].innerHTML = '<p class="text"><div>Hi, 周六的安排是：</div><div>地点：UME华星，</div><div>午饭：重八牛府，</div><div>电影开始时间是下午2:30</div></p>';
-			 }, 30);
-			 setTimeout(function () {
-				 curtainDom.getElementsByClassName('text')[0].classList.add('opening');
-			 }, 100);
+			 
 		}, 2400);
+		setTimeout(function() {
+				 curtainDom.getElementsByClassName('text')[0].innerHTML = '<p class="text"><div>Hi, 周六的安排是：</div><div>地点：UME华星，</div><div>午饭：重八牛府，</div><div>电影开始时间是下午2:30</div></p>';
+			 
+		}, 2500);
+		 setTimeout(function () {
+			 curtainDom.getElementsByClassName('text')[0].classList.add('opening');
+		 }, 2600);
 	}, 0);
 }
 
